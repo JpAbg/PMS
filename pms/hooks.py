@@ -1,7 +1,7 @@
 app_name = "pms"
-app_title = "PMS"
+app_title = "Pomas"
 app_publisher = "Jean Paul Abou Gharib"
-app_description = "Project Management System"
+app_description = "Pomas project management workspace"
 app_email = "abougharib.jp@gmail.com"
 app_license = "mit"
 
@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/pms/css/pms.css"
-# app_include_js = "/assets/pms/js/pms.js"
+app_include_js = "/assets/pms/js/pomas_desk.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/pms/css/pms.css"
@@ -148,6 +148,8 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
+scheduler_events = {"hourly": ["pms.api.mark_overdue_tasks"]}
+
 # scheduler_events = {
 # 	"all": [
 # 		"pms.tasks.all"
@@ -247,3 +249,18 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+after_install = "pms.setup.after_install"
+
+website_route_rules = [
+	{"from_route": "/pms", "to_route": "frontend"},
+	{"from_route": "/pms/<path:app_path>", "to_route": "frontend"},
+]
+
+add_to_apps_screen = [
+	{"name": "pms", "logo": "/assets/pms/frontend/Pomas-Logo.png", "title": "Pomas", "route": "/pms"}
+]
+
+# Social sign-up accounts are restricted to the same baseline Pomas role as email sign-up.
+doc_events = {
+    "User": {"after_insert": "pms.social_login.provision_social_pms_user"},
+}

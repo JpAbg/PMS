@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:PMS-SUB-{YYYY}-{#####}",
+ "creation": "2026-09-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["task", "project", "submitted_by", "submitted_on", "description", "files"],
+ "fields": [
+  {"fieldname": "task", "fieldtype": "Link", "in_list_view": 1, "label": "Task", "options": "Task", "reqd": 1},
+  {"fieldname": "project", "fieldtype": "Link", "in_list_view": 1, "label": "Project", "options": "Project", "reqd": 1},
+  {"fieldname": "submitted_by", "fieldtype": "Link", "in_list_view": 1, "label": "Submitted By", "options": "User", "reqd": 1},
+  {"fieldname": "submitted_on", "fieldtype": "Datetime", "in_list_view": 1, "label": "Submitted On", "reqd": 1},
+  {"fieldname": "description", "fieldtype": "Long Text", "label": "Description", "reqd": 1},
+  {"fieldname": "files", "fieldtype": "Table", "label": "Files", "options": "PMS Work Submission File"}
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-09-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "PMS",
+ "name": "PMS Work Submission",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
