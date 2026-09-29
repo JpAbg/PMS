@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/Pomas-Logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17111f" />
+    <title>Pomas · Project workspace</title>
+  </head>
+  <body>
+    <div id="app"></div>
+		<script>
+			window.csrf_token = '{{ frappe.session.csrf_token }}';
+			// TODO: load boot data here (context file is created in `www` directory)
+		</script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
